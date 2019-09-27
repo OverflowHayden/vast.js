@@ -1,7 +1,12 @@
 import Vue from 'vue';
 import Fast from 'project-fast';
+import base from './components/base';
 import button from './components/button';
 import checkbox from './components/checkbox';
+import layout from './components/layout';
+import appbar from './components/appbar';
+import drawer from './components/drawer';
+import main from './components/main';
 //
 // // Declare install function executed by Vue.use()
 // export function
@@ -26,7 +31,11 @@ export default {
     install(Vue) {
         // if (install.installed) return;
         // install.installed = true;
+        Vue.component('fast-layout', layout);
         Vue.component('fast-button', button);
         Vue.component('fast-checkbox', checkbox);
+        Vue.component('fast-appbar', appbar);
+        Vue.component('fast-drawer', drawer);
+        Vue.component('fast-main', main);
     }
 };

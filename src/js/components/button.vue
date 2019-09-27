@@ -7,7 +7,6 @@
 
 <script>
     import '../../scss/components/button.scss';
-    import '../../scss/components/mdi.scss';
 
     export default {
         name: 'fast-button',
