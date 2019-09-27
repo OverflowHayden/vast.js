@@ -1,0 +1,40 @@
+{
+  "name": "project-vast",
+  "description": "A Vue.js wrapper for Project FAST",
+  "version": "0.1.0",
+  "main": "dist/app.js",
+  "module": "src/js/app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OverflowHayden/vast.js.git"
+  },
+  "keywords": [
+    "project-vast",
+    "vast.js"
+  ],
+  "author": "Hayden Lin",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/OverflowHayden/vast.js/issues"
+  },
+  "homepage": "https://github.com/OverflowHayden/vast.js#readme",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "dependencies": {
+    "project-fast": "^1.0.0-beta.5",
+    "sass": "^1.22.12",
+    "sass-loader": "^8.0.0",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.0",
+    "laravel-mix": "^5.0.0",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
