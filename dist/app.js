@@ -154,6 +154,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_components_button_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_components_button_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _scss_components_mdi_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../scss/components/mdi.scss */ "./src/scss/components/mdi.scss");
 /* harmony import */ var _scss_components_mdi_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_components_mdi_scss__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 //
 //
 //
@@ -165,7 +167,56 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'fast-button',
-  props: ['href', 'type', 'icon']
+  props: ['href', 'type', 'icon'],
+  computed: {
+    typeClass: function typeClass() {
+      if (typeof this.type === 'string') {
+        return 'button--' + this.type;
+      }
+
+      if (_typeof(this.type) === 'object') {
+        return Object.entries(this.type).filter(function (type) {
+          return type[1];
+        }).map(function (type) {
+          return 'button--' + type[0];
+        }).join(' ');
+      }
+
+      return this.type;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/js/components/checkbox.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./src/js/components/checkbox.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _scss_components_checkbox_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../scss/components/checkbox.scss */ "./src/scss/components/checkbox.scss");
+/* harmony import */ var _scss_components_checkbox_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_components_checkbox_scss__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'fast-checkbox',
+  props: {
+    label: '',
+    name: '',
+    id: '',
+    disabled: false
+  }
 });
 
 /***/ }),
@@ -183,6 +234,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "/* ---------------------------------------------- //\n * Colors\n// ---------------------------------------------- */\n/* ---------------------------------------------- //\n * Style settings\n// ---------------------------------------------- */\n/* ---------------------------------------------- //\n * Font\n// ---------------------------------------------- */\n/* ---------------------------------------------- //\n * Neat\n/* ---------------------------------------------- */\nhtml {\n  font-size: 62.5%;\n  overflow-x: hidden;\n}\n\nbody {\n  font-family: \"Roboto\", sans-serif;\n  font-size: 1.6rem;\n  line-height: 1.4em;\n  letter-spacing: 0.05rem;\n  overflow-x: hidden;\n}\n\n:focus, :active {\n  outline: none;\n}\n\nh1, h2, h3, h4, h5, h6 {\n  line-height: 140%;\n  font-weight: 400;\n}\n\nh1 {\n  font-size: 4.2rem;\n}\n\nh2 {\n  font-size: 3.4rem;\n}\n\nh3 {\n  font-size: 2.8rem;\n}\n\nh4 {\n  font-size: 2.2rem;\n}\n\nh5 {\n  font-size: 1.8rem;\n  font-weight: 500;\n}\n\nh6 {\n  font-size: 1.6rem;\n  font-weight: 500;\n}\n\na {\n  text-decoration: none;\n}\na:hover {\n  text-decoration: none;\n}\n\nhr {\n  background: #999999;\n  border: none;\n  width: 100%;\n  height: 1px;\n  margin: 30px 0;\n}\n\n.button {\n  position: relative;\n  overflow: hidden;\n  background: #F37748;\n  border: 2px solid transparent;\n  border-radius: 3px;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);\n  color: #fff;\n  display: inline-block;\n  font-size: 1.6rem;\n  font-weight: 500;\n  line-height: 1.6rem;\n  letter-spacing: 0.125rem;\n  padding: 12px 22px 11px;\n  cursor: pointer;\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  transition: background 0.2s ease;\n  text-transform: uppercase;\n  vertical-align: middle;\n}\n.button:active, .button:focus {\n  outline: none;\n}\n.button:after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  pointer-events: none;\n  background-image: radial-gradient(circle, #000 10%, transparent 10.01%);\n  background-repeat: no-repeat;\n  background-position: 50%;\n  transform: scale(10, 10);\n  opacity: 0;\n  transition: transform 0.5s, opacity 1s;\n  background-color: #fff;\n}\n.button:active:after {\n  transform: scale(0, 0);\n  opacity: 0.2;\n  transition: 0s;\n}\n.button .fa, .button .mdi {\n  margin-left: -4px;\n  margin-right: 14px;\n}\n.button:hover {\n  background: #f26935;\n  color: #fff;\n}\n.button--alt {\n  background: none;\n  border: 2px solid #F37748;\n  box-shadow: none;\n  color: #F37748;\n}\n.button--alt:hover {\n  background: whitesmoke;\n  color: #F37748;\n}\n.button--text {\n  background: none;\n  border: 2px solid transparent;\n  box-shadow: none;\n  color: #F37748;\n}\n.button--text:hover {\n  background: whitesmoke;\n  color: #F37748;\n}\n.button--compact {\n  padding: 8px 16px 7px;\n  font-size: 80%;\n}\n.button--icon {\n  padding: 8px;\n}\n.button--icon .fa, .button--icon .mdi {\n  margin: 0;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./src/scss/components/checkbox.scss":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./src/scss/components/checkbox.scss ***!
+  \******************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/* ---------------------------------------------- //\n * Colors\n// ---------------------------------------------- */\n/* ---------------------------------------------- //\n * Style settings\n// ---------------------------------------------- */\n/* ---------------------------------------------- //\n * Font\n// ---------------------------------------------- */\n/* ---------------------------------------------- //\n * Neat\n/* ---------------------------------------------- */\nhtml {\n  font-size: 62.5%;\n  overflow-x: hidden;\n}\n\nbody {\n  font-family: \"Roboto\", sans-serif;\n  font-size: 1.6rem;\n  line-height: 1.4em;\n  letter-spacing: 0.05rem;\n  overflow-x: hidden;\n}\n\n:focus, :active {\n  outline: none;\n}\n\nh1, h2, h3, h4, h5, h6 {\n  line-height: 140%;\n  font-weight: 400;\n}\n\nh1 {\n  font-size: 4.2rem;\n}\n\nh2 {\n  font-size: 3.4rem;\n}\n\nh3 {\n  font-size: 2.8rem;\n}\n\nh4 {\n  font-size: 2.2rem;\n}\n\nh5 {\n  font-size: 1.8rem;\n  font-weight: 500;\n}\n\nh6 {\n  font-size: 1.6rem;\n  font-weight: 500;\n}\n\na {\n  text-decoration: none;\n}\na:hover {\n  text-decoration: none;\n}\n\nhr {\n  background: #999999;\n  border: none;\n  width: 100%;\n  height: 1px;\n  margin: 30px 0;\n}\n\n.checkbox {\n  margin: 0 0 15px;\n}\n.checkbox::selection {\n  background: transparent;\n}\n.checkbox__input {\n  cursor: pointer;\n  display: inline-block;\n  vertical-align: top;\n  margin: 0;\n  width: 20px;\n  height: 20px;\n  border: 2px solid #757575;\n  border-radius: 2px;\n  text-indent: -999em;\n  position: relative;\n  transition: border 0.2s ease, background 0.2s ease;\n}\n.checkbox__input:hover {\n  background: rgba(0, 0, 0, 0.06);\n}\n.checkbox__input:after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  pointer-events: none;\n  background-image: radial-gradient(circle, #757575 20%, transparent 20.01%);\n  background-repeat: no-repeat;\n  background-position: 50%;\n  transform: scale(10, 10);\n  opacity: 0;\n  transition: transform 0.5s, opacity 1s;\n  background-color: #fff;\n}\n.checkbox__input:active:after {\n  transform: scale(0, 0);\n  opacity: 0.2;\n  transition: 0s;\n}\n.checkbox__input::selection {\n  background: transparent;\n}\n.checkbox__label {\n  cursor: pointer;\n  margin-left: 12px;\n  margin-bottom: 0;\n}\n.checkbox__label::selection {\n  background: transparent;\n}\n.checkbox input[type=checkbox] {\n  visibility: hidden;\n  position: absolute;\n}\n.checkbox input[type=checkbox]:checked + .checkbox__input {\n  background: #F37748;\n  border-color: #F37748;\n}\n.checkbox input[type=checkbox]:checked + .checkbox__input:before {\n  content: \"\";\n  position: absolute;\n  top: 6px;\n  left: 1px;\n  border-right: 2px solid transparent;\n  border-bottom: 2px solid transparent;\n  transform: rotate(45deg);\n  transform-origin: 0 100%;\n  animation: checkbox-check 0.125s 0.25s cubic-bezier(0.4, 0, 0.23, 1) forwards;\n}\n.checkbox input[type=checkbox]:checked + .checkbox__input:after {\n  background-image: radial-gradient(circle, #F37748 20%, transparent 20.01%);\n}\n.checkbox input[type=checkbox]:indeterminate + .checkbox__input {\n  background: #F37748;\n  border-color: #F37748;\n}\n.checkbox input[type=checkbox]:indeterminate + .checkbox__input:before {\n  content: \"\";\n  position: absolute;\n  top: 7px;\n  left: 2px;\n  border-bottom: 2px solid transparent;\n  animation: checkbox-indeterminate 0.125s 0.25s cubic-bezier(0.4, 0, 0.23, 1) forwards;\n}\n.checkbox input[type=checkbox]:indeterminate + .checkbox__input:after {\n  background-image: radial-gradient(circle, #F37748 20%, transparent 20.01%);\n}\n.checkbox input[type=checkbox]:disabled + .checkbox__input {\n  border-color: #757575;\n  opacity: 0.7;\n}\n.checkbox input[type=checkbox]:disabled + .checkbox__input + .checkbox__label {\n  opacity: 0.7;\n}\n.checkbox input[type=checkbox]:disabled:checked + .checkbox__input {\n  background: #757575;\n}\n\n@keyframes checkbox-check {\n  0% {\n    width: 0;\n    height: 0;\n    border-color: #fff;\n    transform: translate3d(0, 0, 0) rotate(45deg);\n  }\n  33% {\n    width: 7px;\n    height: 0;\n    transform: translate3d(0, 0, 0) rotate(45deg);\n  }\n  100% {\n    width: 7px;\n    height: 12px;\n    border-color: #fff;\n    transform: translate3d(0, -10px, 0) rotate(45deg);\n  }\n}\n@keyframes checkbox-indeterminate {\n  0% {\n    width: 0;\n    transform: translate3d(0, 0, 0);\n  }\n  100% {\n    width: 12px;\n    transform: translate3d(0, 0, 0);\n    border-color: #fff;\n  }\n}", ""]);
 
 // exports
 
@@ -7126,11 +7196,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "button",
-    {
-      staticClass: "button",
-      class: _vm.type ? "button--" + _vm.type : "",
-      attrs: { href: _vm.href }
-    },
+    { staticClass: "button", class: _vm.typeClass, attrs: { href: _vm.href } },
     [
       _vm.icon
         ? _c("i", { staticClass: "mdi", class: "mdi-" + _vm.icon })
@@ -7140,6 +7206,45 @@ var render = function() {
     ],
     2
   )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/components/checkbox.vue?vue&type=template&id=4744d4ef&":
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/js/components/checkbox.vue?vue&type=template&id=4744d4ef& ***!
+  \*****************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "checkbox" }, [
+    _c("input", {
+      attrs: {
+        id: _vm.id,
+        name: _vm.name,
+        type: "checkbox",
+        disabled: _vm.disabled
+      }
+    }),
+    _vm._v(" "),
+    _c("label", { staticClass: "checkbox__input", attrs: { for: _vm.id } }),
+    _vm._v(" "),
+    _c("label", { staticClass: "checkbox__label", attrs: { for: _vm.id } }, [
+      _vm._v(_vm._s(_vm.label))
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -19264,6 +19369,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var project_fast__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! project-fast */ "./node_modules/project-fast/src/assets/js/app.js");
 /* harmony import */ var _components_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/button */ "./src/js/components/button.vue");
+/* harmony import */ var _components_checkbox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/checkbox */ "./src/js/components/checkbox.vue");
+
 
 
  //
@@ -19291,8 +19398,7 @@ __webpack_require__.r(__webpack_exports__);
     // if (install.installed) return;
     // install.installed = true;
     Vue.component('fast-button', _components_button__WEBPACK_IMPORTED_MODULE_2__["default"]);
-    Vue.component('fast-button', _components_button__WEBPACK_IMPORTED_MODULE_2__["default"]);
-    Vue.component('fast-button', _components_button__WEBPACK_IMPORTED_MODULE_2__["default"]);
+    Vue.component('fast-checkbox', _components_checkbox__WEBPACK_IMPORTED_MODULE_3__["default"]);
   }
 });
 
@@ -19367,6 +19473,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/components/checkbox.vue":
+/*!****************************************!*\
+  !*** ./src/js/components/checkbox.vue ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _checkbox_vue_vue_type_template_id_4744d4ef___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./checkbox.vue?vue&type=template&id=4744d4ef& */ "./src/js/components/checkbox.vue?vue&type=template&id=4744d4ef&");
+/* harmony import */ var _checkbox_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./checkbox.vue?vue&type=script&lang=js& */ "./src/js/components/checkbox.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _checkbox_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _checkbox_vue_vue_type_template_id_4744d4ef___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _checkbox_vue_vue_type_template_id_4744d4ef___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/js/components/checkbox.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/js/components/checkbox.vue?vue&type=script&lang=js&":
+/*!*****************************************************************!*\
+  !*** ./src/js/components/checkbox.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_checkbox_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./checkbox.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/js/components/checkbox.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_checkbox_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/js/components/checkbox.vue?vue&type=template&id=4744d4ef&":
+/*!***********************************************************************!*\
+  !*** ./src/js/components/checkbox.vue?vue&type=template&id=4744d4ef& ***!
+  \***********************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_checkbox_vue_vue_type_template_id_4744d4ef___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./checkbox.vue?vue&type=template&id=4744d4ef& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/js/components/checkbox.vue?vue&type=template&id=4744d4ef&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_checkbox_vue_vue_type_template_id_4744d4ef___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_checkbox_vue_vue_type_template_id_4744d4ef___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./src/scss/components/button.scss":
 /*!*****************************************!*\
   !*** ./src/scss/components/button.scss ***!
@@ -19376,6 +19551,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./button.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./src/scss/components/button.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/scss/components/checkbox.scss":
+/*!*******************************************!*\
+  !*** ./src/scss/components/checkbox.scss ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/sass-loader/dist/cjs.js??ref--6-3!./checkbox.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./src/scss/components/checkbox.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Fast from 'project-fast';
 import button from './components/button';
+import checkbox from './components/checkbox';
 //
 // // Declare install function executed by Vue.use()
 // export function
@@ -26,7 +27,6 @@ export default {
         // if (install.installed) return;
         // install.installed = true;
         Vue.component('fast-button', button);
-        Vue.component('fast-button', button);
-        Vue.component('fast-button', button);
+        Vue.component('fast-checkbox', checkbox);
     }
 };
