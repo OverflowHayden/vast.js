@@ -3,6 +3,8 @@ import Fast from 'project-fast';
 import base from './components/base';
 import button from './components/button';
 import checkbox from './components/checkbox';
+import list from './components/list';
+import listItem from './components/listItem';
 import layout from './components/layout';
 import appbar from './components/appbar';
 import drawer from './components/drawer';
@@ -34,6 +36,8 @@ export default {
         Vue.component('fast-layout', layout);
         Vue.component('fast-button', button);
         Vue.component('fast-checkbox', checkbox);
+        Vue.component('fast-list', list);
+        Vue.component('fast-list-item', listItem);
         Vue.component('fast-appbar', appbar);
         Vue.component('fast-drawer', drawer);
         Vue.component('fast-main', main);

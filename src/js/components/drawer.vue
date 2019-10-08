@@ -2,7 +2,7 @@
     <aside class="drawer drawer--temporary">
         <div class="drawer__drawer">
             <header class="drawer__header">
-                <span class="drawer__header-text">Drawer header</span>
+                <span class="drawer__header-text">{{ headerText }}</span>
             </header>
             <nav class="drawer__content">
                 <slot></slot>
@@ -17,6 +17,9 @@
 
     export default {
         name: 'fast-drawer',
+        props: {
+            headerText: String,
+        },
 
         mounted() {
             Fast.Drawer();

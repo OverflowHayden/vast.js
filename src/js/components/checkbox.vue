@@ -12,9 +12,9 @@
     export default {
         name: 'fast-checkbox',
         props: {
-            label: '',
-            name: '',
-            id: '',
+            label: String,
+            name: String,
+            id: String,
             disabled: false,
         },
     }

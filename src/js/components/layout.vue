@@ -1,6 +1,6 @@
 <template>
     <div>
-        <fast-drawer>
+        <fast-drawer :header-text="drawerHeaderText">
             <slot name="drawer"></slot>
         </fast-drawer>
         <fast-appbar>
@@ -18,6 +18,9 @@
 
     export default {
         name: 'fast-layout',
+        props: {
+            drawerHeaderText: String,
+        },
         components: {FastAppbar, FastDrawer},
     }
 </script>
